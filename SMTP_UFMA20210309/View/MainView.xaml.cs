@@ -36,7 +36,7 @@ namespace SMTP_UFMA20210309 {
                 // Mail message
                 var mail = new MailMessage() {
                     From = new MailAddress("studentTestDCCMAPI2021@gmail.com"),
-                    Subject = "Dangerous Zone!",
+                    Subject = "Dangerous Zone!!!",
                     Body = txtMessage.Text
                 };
 
