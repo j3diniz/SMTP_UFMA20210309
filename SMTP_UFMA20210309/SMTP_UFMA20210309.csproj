@@ -108,5 +108,8 @@
   <ItemGroup>
     <Resource Include="SupportContent\Images\UFMA-brasao-normal.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="SupportContent\Images\MapUFMA.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SMTP_UFMA20210309"
         mc:Ignorable="d"
-        Title="SMTP Protocol - DCCMAPI - Redes - Joel Diniz" Height="270" Width="330" WindowStartupLocation="CenterScreen" Background="#FFEEEEF2">
+        Title="SMTP Protocol - DCCMAPI - Redes" Height="270" Width="330" WindowStartupLocation="CenterScreen" Background="#FFEEEEF2">
     <Viewbox Stretch="Uniform">
         <StackPanel>
             <Menu Height="21" Margin="0">
@@ -21,9 +21,12 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
-                <Canvas Name="viewPortCanvas" Background="White" ClipToBounds="True"
+                <Canvas Name="viewPortCanvas" ClipToBounds="True"
                     Width="300" Height="300"  Grid.Row="0" Grid.Column="0"
                         Margin="5,5,33,5">
+                    <Canvas.Background>
+                        <ImageBrush ImageSource="/SMTP_UFMA20210309;component/SupportContent/Images/MapUFMA.jpg"/>
+                    </Canvas.Background>
                     <Rectangle x:Name="plotArea" Width="300" Height="300"
                                Stroke="Aquamarine" StrokeThickness="1"/>
                 </Canvas>
@@ -35,7 +38,7 @@
                              Text="joeldiniz@gmail.com"/>
                     <TextBlock Text="Message:" Margin="5"/>
                     <TextBox Name="txtMessage" Width="171" Margin="5,0,5,0"
-                             Text="You are in a Dangerous Zone!"/>
+                             Text="You are in a Dangerous Zone! 20210325"/>
                     <Button Name="btnSend" Click="Send_OnClick" Width="91" Margin="5,5,5,0">
                         _Send Message
                     </Button>
