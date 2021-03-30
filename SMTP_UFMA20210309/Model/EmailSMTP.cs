@@ -59,7 +59,9 @@ namespace SMTP_UFMA20210309.Model {
             };
 
             // Send the message
-            client.Send(mail);
+            //client.Send(mail);
+            string status = "Succeed!";
+            client.SendAsync(mail,status);
 
         }
 

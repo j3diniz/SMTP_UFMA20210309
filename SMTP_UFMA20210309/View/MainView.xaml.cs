@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Windows;
 using System.Net;
+using System.Configuration;
 using System.Net.Mail;
 using System.Windows.Shapes;
 using SMTP_UFMA20210309.Model;
@@ -47,17 +48,23 @@ namespace SMTP_UFMA20210309 {
 
         private void Send_OnClick(object sender, RoutedEventArgs e) {
             try {
-                #region Email
-                emailSMTP.EmailToAddress = txtToEmail.Text;
-                emailSMTP.EmailMessage = txtMessage.Text;
-                emailSMTP.SendEmail();
-                MessageBox.Show("Message sent!", "Message: ");
-                #endregion
+                SendEmail();
             } catch (Exception ex) {
                 MessageBox.Show("Error message: ", ex.Message);
             }
 
         }
+
+        private void SendEmail() {
+            #region Email
+            emailSMTP.EmailToAddress = txtToEmail.Text;
+            emailSMTP.EmailMessage = txtMessage.Text;
+            emailSMTP.SendEmail();
+            MessageBox.Show("Message sent!", "Message: ");
+            #endregion
+        }
+
+
 
         private void AddGraphics() {
             // Distance Rover - Target
@@ -106,12 +113,7 @@ namespace SMTP_UFMA20210309 {
             AddGraphics();
 
             if (pathDistance < 50) {
-                #region Email
-                emailSMTP.EmailToAddress = txtToEmail.Text;
-                emailSMTP.EmailMessage = txtMessage.Text;
-                emailSMTP.SendEmail();
-                MessageBox.Show("Message sent!", "Message: ");
-                #endregion
+                SendEmail();
             }
         }
 
