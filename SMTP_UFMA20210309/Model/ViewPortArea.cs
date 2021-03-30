@@ -31,6 +31,30 @@ namespace SMTP_UFMA20210309.Model {
             get { return yMax; }
             set { yMax = value; }
         }
+
+        private double roverX;
+        public double RoverX {
+            get { return roverX; }
+            set { roverX = value; }
+        }
+
+        private double roverY;
+        public double RoverY {
+            get { return roverY; }
+            set { roverY = value; }
+        }
+
+        private double targetX;
+        public double TargetX {
+            get { return targetX; }
+            set { targetX = value; }
+        }
+
+        private double targetY;
+        public double TargetY {
+            get { return targetY; }
+            set { targetY = value; }
+        }
         #endregion
 
         #region Constructors
@@ -56,6 +80,18 @@ namespace SMTP_UFMA20210309.Model {
             return result;
         }
         #endregion
+
+        public double PathDistance() {
+            double distance = Math.Sqrt(Math.Pow(TargetY-RoverY,2)+ Math.Pow(TargetX - RoverX, 2));
+            return distance;
+        }
+
+        public void ForwardRover(double deltaX) {
+            double m = (TargetY - RoverY) / (TargetX - RoverX);
+            double b = TargetY - (m * TargetX);
+            RoverX = RoverX + deltaX;
+            RoverY = (m * RoverX) + b;
+        }
 
         // ToDo: Implement ToString
 

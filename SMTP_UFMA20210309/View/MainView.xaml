@@ -38,7 +38,7 @@
                              Text="joeldiniz@gmail.com"/>
                     <TextBlock Text="Message:" Margin="5"/>
                     <TextBox Name="txtMessage" Width="171" Margin="5,0,5,0"
-                             Text="You are in a Dangerous Zone! 20210325"/>
+                             Text="You are in a Dangerous Zone!"/>
                     <Button Name="btnSend" Click="Send_OnClick" Width="91" Margin="5,5,5,0">
                         _Send Message
                     </Button>
@@ -47,10 +47,13 @@
                     <Separator Margin="5,15,5,15" Background="Aquamarine" />
                     <!---->
                     <!--#region Rover -->
-                    <TextBlock Text="Rover" Margin="5" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Text="Graphic Area" Margin="5" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <TextBlock Name="lblRover" Text="Rover: " Margin="5"/>
+                    <TextBlock Name="lblTarget" Text="Target: " Margin="5"/>
+                    <TextBlock Name="lblDistance" Text="Distance: " Margin="5"/>
                     <StackPanel Orientation="Horizontal">
-                        <Button Width="77" Margin="5">_Restarting</Button>
-                        <Button Width="77" Margin="5">_Forward</Button>
+                        <Button Width="77" Margin="5" Click="Restarting_OnClick">_Restarting</Button>
+                        <Button Width="77" Margin="5" Click="Forward">_Forward</Button>
                     </StackPanel>
                     <!--#endregion-->
                     <Button Name="btnExit" Click="Exit_OnClick" Width="91" Margin="5,77,5,5">
